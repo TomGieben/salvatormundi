@@ -48,10 +48,6 @@ class NewsArticlesController extends Controller
             return redirect()->back()->with('error', 'Je hebt geen tekst ingevuld.');
         }
 
-        if(!$request->images) {
-            return redirect()->back()->with('error', 'Je hebt geen afbeeldingen geupload.');
-        } 
-
         if($request->file('images')) {
             foreach($request->file('images') as $key => $image) {
                 $count = $key + 1;
@@ -68,9 +64,9 @@ class NewsArticlesController extends Controller
     
     
                 $imagepaths[$key] = $input['file'];
-
-                $attributes['images'] = json_encode($imagepaths);
             }
+
+            $attributes['images'] = json_encode($imagepaths);
         }
         
 
@@ -79,6 +75,7 @@ class NewsArticlesController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'writer' => $request->writer,
+
         ];
 
         $newsarticle->update($attributes);
