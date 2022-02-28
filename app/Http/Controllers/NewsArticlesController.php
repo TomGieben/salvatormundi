@@ -18,13 +18,16 @@ class NewsArticlesController extends Controller
 
     public function edit($newsarticle) {
         $newsarticle = NewsArticles::where('slug', $newsarticle)->first();
-        dd($newsarticle);
+
+        return view('admin.newsarticles.edit', [
+            'newsarticle' => $newsarticle,
+        ]);
     }
 
     public function store(Request $request) {
         $slug = Str::slug($request->title);
         if(NewsArticles::where('slug', $slug)->exists()) {
-            return redirect()->back()->with('error', 'Er is al een gelijknamig artikel.');
+            return redirect()->back()->with('error', 'Er is al een artikel met de naam: '.$request->title.'');
         } else {
             $newsarticle = NewsArticles::create([
                 'slug' => $slug,

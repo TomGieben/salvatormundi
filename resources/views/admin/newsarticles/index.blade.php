@@ -18,7 +18,7 @@
                 @csrf
             
                 <label for="title" class="form-label my-1">Titel:</label>
-                <input name="title" type="text" class="form-control my-1" id="slug" placeholder="Titel" required>
+                <input name="title" type="text" class="form-control my-1" id="title" placeholder="Titel" required>
                 <button type="submit" class="btn btn-success my-1"><i class="fa fa-plus"></i> Toevoegen</button>
             </form>  
         </div>
