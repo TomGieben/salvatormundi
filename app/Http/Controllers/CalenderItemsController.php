@@ -46,6 +46,6 @@ class CalenderItemsController extends Controller
 
     public function delete($calendaritem) {
         CalendarItems::where('slug', $calendaritem)->delete();
-        return redirect()->back()->with('success', 'Items succesvol verwijderd.');
+        return redirect()->back()->with('success', 'Item succesvol verwijderd.');
     }
 }
