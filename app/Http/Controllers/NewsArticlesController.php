@@ -50,23 +50,25 @@ class NewsArticlesController extends Controller
 
         if(!$request->images && count(json_decode($newsarticle->images, true)) < 1) {
             return redirect()->back()->with('error', 'Je hebt geen afbeeldingen geupload.');
-        }
-
-        foreach($request->file('images') as $key => $image) {
-            $count = $key + 1;
-            
-            $input['file'] = ''. $slug .'-'.$count.'.png';
-            
-            $destinationPath = public_path('storage/img/newsarticles');
+        } else {
+            foreach($request->file('images') as $key => $image) {
+                $count = $key + 1;
+                
+                $input['file'] = ''. $slug .'-'.$count.'.png';
+                
+                $destinationPath = public_path('storage/img/newsarticles');
+        
+                $imgFile = Image::make($image->getRealPath());
+        
+                $imgFile->resize(800, 3000, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($destinationPath.'/'.$input['file']);
     
-            $imgFile = Image::make($image->getRealPath());
     
-            $imgFile->resize(800, 3000, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($destinationPath.'/'.$input['file']);
+                $imagepaths[$key] = $input['file'];
+            }
 
-
-            $imagepaths[$key] = $input['file'];
+            $attributes['images'] = json_encode($imagepaths);
         }
 
         $attributes = [
@@ -74,7 +76,6 @@ class NewsArticlesController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'writer' => $request->writer,
-            'images' => json_encode($imagepaths),
         ];
 
         $newsarticle->update($attributes);
