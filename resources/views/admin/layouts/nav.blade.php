@@ -85,7 +85,7 @@
       <li><a href="#">Dashboard</a></li>
       <li><a href="#">Teksten</a></li>
       <li><a href="#">Activiteiten</a></li>
-      <li><a href="#">Nieuws</a></li>
+      <li><a href="{{route('admin.newsarticles.index')}}">Nieuws</a></li>
       <li><a href="#">Nieuwsbrieven</a></li>
       <li><a href="#">Fotogalerij</a></li>
     </ul>

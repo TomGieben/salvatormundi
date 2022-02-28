@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>
-        Salvator-mundi | Admin
+        Salvator-mundi
         @if(!Route::is('welcome.index')) 
         | {{ basename(url()->current()) }}
         @endif
