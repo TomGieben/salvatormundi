@@ -8,7 +8,7 @@
     .bar{
         height: 5px;
         width: 100%;
-        background-color: #EE5352;
+        background-color: #A31621;
         display: block;
         border-radius: 5px;
         transition: 0.3s ease;
@@ -47,7 +47,7 @@
         width: 0;
         height: 0;
         margin: 30px 0 20px 20px;
-        background: radial-gradient(circle,#EE6352,#EE5352);
+        background: radial-gradient(circle,#A31621,#A31621);
         border-radius: 50%;
         transition: 0.3s ease;
     }
