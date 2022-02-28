@@ -15,11 +15,11 @@ class CreateNewsArticlesTable extends Migration
     {
         Schema::create('news_articles', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
-            $table->string('title');
-            $table->text('description');
-            $table->string('writer');
-            $table->json('images');
+            $table->string('slug')->nullable();
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->string('writer')->nullable();
+            $table->json('images')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
