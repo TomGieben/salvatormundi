@@ -21,16 +21,16 @@
         @include('layouts.nav')
     </header>
     
-
     <div>
         @yield('content')
     </div>
 
-    <div>
+    <footer>
         @include('layouts.footer')
-    </div>
+    </footer>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
+
 
