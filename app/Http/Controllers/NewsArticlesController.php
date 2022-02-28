@@ -37,7 +37,6 @@ class NewsArticlesController extends Controller
 
             return redirect()->route('admin.newsarticles.edit', $newsarticle->slug);
         }
-        
     }
 
     public function update(Request $request, $newsarticle) {
