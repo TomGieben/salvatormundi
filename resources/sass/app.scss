@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.google.com/specimen/Roboto+Condensed#standard-styles');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 
 // Variables
 @import 'variables';
@@ -14,6 +14,6 @@
 }
 
 body {
-    background-color: $background;
-    color: $on-background;
+    background-color: #ffffff;
+    color: $secondary;
 }
