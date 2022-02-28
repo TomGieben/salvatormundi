@@ -48,7 +48,7 @@ class NewsArticlesController extends Controller
             return redirect()->back()->with('error', 'Je hebt geen tekst ingevuld.');
         }
 
-        if(!$request->images) {
+        if(!$request->images && count(json_decode($newsarticle->images, true)) < 1) {
             return redirect()->back()->with('error', 'Je hebt geen afbeeldingen geupload.');
         }
 
