@@ -75,7 +75,7 @@
         display: block;
     }
 </style>
-<div id="menu-bar" class="bg-primairy">
+<div id="menu-bar" class="bg-primairy position-fixed">
     <div id="menu" onclick="onClickMenu()">
         <div id="bar1" class="bar"></div>
         <div id="bar2" class="bar"></div>
@@ -90,8 +90,8 @@
       <li><a href="#">Fotogalerij</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
-    </div>
-    <div class="menu-bg" id="menu-bg"></div>
+</div>
+    <div class="menu-bg position-fixed" id="menu-bg"></div>
 <script>
     function onClickMenu(){
         document.getElementById("menu").classList.toggle("change");
