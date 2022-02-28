@@ -84,7 +84,7 @@
     <ul class="nav" id="nav">
       <li><a href="#">Dashboard</a></li>
       <li><a href="#">Teksten</a></li>
-      <li><a href="#">Activiteiten</a></li>
+      <li><a href="{{route('admin.calendaritems.index')}}">Activiteiten</a></li>
       <li><a href="{{route('admin.newsarticles.index')}}">Nieuws</a></li>
       <li><a href="{{route('admin.newsletters.index')}}">Nieuwsbrieven</a></li>
       <li><a href="#">Fotogalerij</a></li>

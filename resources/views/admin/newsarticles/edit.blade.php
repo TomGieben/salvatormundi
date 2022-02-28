@@ -1,6 +1,6 @@
 @extends('admin.layouts.layout')
 @section('content')
-<div class="container text-dark">
+<div class="container text-dark mt-5">
     <div>
         <h1 class="my-4">{{$newsarticle->title}} | Bewerken</h1>
     </div>
@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <form action="{{route('admin.newsarticles.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('admin.newsarticles.update', $newsarticle->slug)}}" method="post" enctype="multipart/form-data">
         @method('post')
         @csrf
         <div class="row">
@@ -30,7 +30,7 @@
                 <input name="writer" type="text" class="form-control my-1" id="writer" placeholder="Schrijver" value="{{auth()->user()->name}}" required>
             </div>
             <div class="col-md-4  my-1">
-                <label for="images" class="form-label my-1">Afbeeldingen:</label>
+                <label for="images" class="form-label my-1">Afbeeldingen: @if($newsarticle->images) | Momenteel {{count(json_decode($newsarticle->images, true))}} afbeeldingen @endif</label>
                 <input name="images[]" type="file" class="form-control" id="images" placeholder="Afbeelding" accept="image/*" multiple>
             </div>
             <div class="col-12 my-1">
@@ -38,6 +38,9 @@
                 <textarea class="tinymce form-control" name="description" id="description">@if(old()) {{old('description')}} @else {{$newsarticle->description}} @endif</textarea>
             </div>
         </div>
+        <button type="submit" class="btn btn-success">
+            <i class="fa fa-save"></i> Toevoegen
+        </button>
     </from>
 </div>
 @endsection

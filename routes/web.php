@@ -12,6 +12,11 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name(
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
 
+    Route::get('/admin/calander', [App\Http\Controllers\CalenderItemsController::class, 'index'])->name('admin.calendaritems.index');
+    Route::get('/admin/calander/delete/{calendaritem}', [App\Http\Controllers\CalenderItemsController::class, 'delete'])->name('admin.calendaritems.delete');
+    Route::post('/admin/calander/store', [App\Http\Controllers\CalenderItemsController::class, 'store'])->name('admin.calendaritems.store');
+    Route::post('/admin/calander/update/{calendaritem}', [App\Http\Controllers\CalenderItemsController::class, 'update'])->name('admin.calendaritems.update');
+
     Route::get('/admin/nieuwsartikelen', [App\Http\Controllers\NewsArticlesController::class, 'index'])->name('admin.newsarticles.index');
     Route::get('/admin/nieuwsartikelen/edit/{newsarticles}', [App\Http\Controllers\NewsArticlesController::class, 'edit'])->name('admin.newsarticles.edit');
     Route::get('/admin/nieuwsartikelen/delete/{newsarticles}', [App\Http\Controllers\NewsArticlesController::class, 'delete'])->name('admin.newsarticles.delete');
