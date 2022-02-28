@@ -31,7 +31,7 @@
     </div>
     <div class="row my-4">
         @foreach($newsarticles as $newsarticle)
-            <div class="col-md-4">
+            <div class="col-md-4 my-4">
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">

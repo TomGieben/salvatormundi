@@ -20,7 +20,22 @@
     <ul class="list-group">
         @if($items)
             @foreach ($items as $item)
-                <li class="list-group-item">{{$items->title}}</li>
+                <li class="list-group-item">
+                    Titel: <b>{{$item->title}}</b> |
+                    Datum/Tijd: <b>{{$item->start_at}}</b> |
+                    @if($item->newsarticle)
+                        Gekoppeld: <a href="" class="text-dark"><b>{{$item->newsarticle->title}}</b></a> |
+                    @endif
+                    Beschrijving: @if($item->description) <i class="fa fa-check text-success"></i> @else <i class="fa fa-times text-danger"></i> @endif |
+                    <div class="btn-group m-1">
+                        <a href="{{route('admin.calendaritems.delete', $item->slug)}}" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                        <a href="" class="btn btn-warning">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                    </div>
+                </li>
             @endforeach
         @endif
 
@@ -35,7 +50,7 @@
         @method('post')
         @csrf
     
-        <div class="card m-4" id="add">
+        <div class="card m-4" id="add" style="display: none;">
             <div class="card-header">
                 <div class="card-title">
                     <div class="row justify-content-between">
@@ -58,7 +73,7 @@
                 <textarea name="description" type="text" class="form-control my-1" id="description"></textarea>
         
                 <label for="start-date" class="form-label my-1">Datum:</label>
-                <input name="start-date" type="datetime-local" class="form-control my-1" id="start-date" required>
+                <input name="startdate" type="datetime-local" class="form-control my-1" id="start-date" required>
         
                 <label for="newsarticle">Kies eventueel een nieuws artikel:</label>
                 <select name="newsarticle" id="newsarticle" class="form-control">

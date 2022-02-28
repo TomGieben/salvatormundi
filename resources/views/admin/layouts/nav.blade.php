@@ -82,7 +82,7 @@
         <div id="bar3" class="bar"></div>
     </div>
     <ul class="nav" id="nav">
-      <li><a href="#">Dashboard</a></li>
+      <li><a href="{{route('admin.index')}}">Dashboard</a></li>
       <li><a href="#">Teksten</a></li>
       <li><a href="{{route('admin.calendaritems.index')}}">Activiteiten</a></li>
       <li><a href="{{route('admin.newsarticles.index')}}">Nieuws</a></li>
