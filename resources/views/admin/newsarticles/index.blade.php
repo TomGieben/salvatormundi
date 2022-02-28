@@ -1,12 +1,18 @@
 @extends('admin.layouts.layout')
 @section('content')
-<div class="container text-dark">
+<div class="container text-dark mt-5">
     <div>
         <h1 class="my-4">Nieuws artikelen</h1>
     </div>
 
     @if ($message = Session::get('error'))
         <div class="alert-message alert alert-danger col-12 p-2">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+
+    @if ($message = Session::get('success'))
+        <div class="alert-message alert alert-success col-12 p-2">
             <p>{{ $message }}</p>
         </div>
     @endif
@@ -32,20 +38,29 @@
                             <h2>{{$newsarticle->title}}</h2>
                         </div>
                     </div>
-                    <div class="card-body">
-                        
+                    <div class="card-body p-2">
+                        @if($newsarticle->images)
+                            <img class="d-block rounded w-100" src="{{url('storage/img/newsarticles/'.json_decode($newsarticle->images, true)[0])}}" alt="{{$newsarticle->slug}}" style="height: 250px;">
+                        @endif
                     </div>
                     <div class="card-footer">
-                        <div class="btn-group">
-                            <a href="" class="btn btn-success">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                            <a href="{{route('admin.newsarticles.edit', $newsarticle->slug)}}" class="btn btn-warning">
-                                <i class="fa fa-pencil"></i>
-                            </a>
-                            <a href="" class="btn btn-danger">
-                                <i class="fa fa-trash"></i>
-                            </a>
+                        <div class="row justify-content-between">
+                            <div class="col-auto">
+                                <i class="fa fa-user"></i> {{$newsarticle->writer}}
+                            </div>
+                            <div class="col-auto">
+                                <div class="btn-group">
+                                    <a href="" class="btn btn-success">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    <a href="{{route('admin.newsarticles.edit', $newsarticle->slug)}}" class="btn btn-warning">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="{{route('admin.newsarticles.delete', $newsarticle->slug)}}" class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

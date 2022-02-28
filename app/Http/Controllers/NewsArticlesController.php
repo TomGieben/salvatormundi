@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\NewsArticles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Image;
 
 class NewsArticlesController extends Controller
 {
@@ -38,11 +39,51 @@ class NewsArticlesController extends Controller
         }
     }
 
-    public function update(Request $request, NewsArticles $newsarticle) {
-        
+    public function update(Request $request, $newsarticle) {
+        $newsarticle = NewsArticles::where('slug', $newsarticle)->first();
+        $slug = Str::slug($request->title);
+        $imagepaths = [];
+
+        if(!$request->description) {
+            return redirect()->back()->with('error', 'Je hebt geen tekst ingevuld.');
+        }
+
+        if(!$request->images) {
+            return redirect()->back()->with('error', 'Je hebt geen afbeeldingen geupload.');
+        }
+
+        foreach($request->file('images') as $key => $image) {
+            $count = $key + 1;
+            
+            $input['file'] = ''. $slug .'-'.$count.'.png';
+            
+            $destinationPath = public_path('storage/img/newsarticles');
+    
+            $imgFile = Image::make($image->getRealPath());
+    
+            $imgFile->resize(800, 3000, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($destinationPath.'/'.$input['file']);
+
+
+            $imagepaths[$key] = $input['file'];
+        }
+
+        $attributes = [
+            'slug' =>  $slug,
+            'title' => $request->title,
+            'description' => $request->description,
+            'writer' => $request->writer,
+            'images' => json_encode($imagepaths),
+        ];
+
+        $newsarticle->update($attributes);
+
+        return redirect()->route('admin.newsarticles.index')->with('success', ''.$request->title.', Is succesvol opgeslagen');
     }
 
-    public function delete(NewsArticles $newsarticle) {
-        
+    public function delete($newsarticle) {
+        NewsArticles::where('slug', $newsarticle)->delete();
+        return redirect()->back()->with('success', 'Artikel succesvol verwijderd.');
     }
 }
