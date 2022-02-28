@@ -43,12 +43,14 @@ class NewsArticlesController extends Controller
         $newsarticle = NewsArticles::where('slug', $newsarticle)->first();
         $slug = Str::slug($request->title);
         $imagepaths = [];
+        $attributes = [];
 
         if(!$request->description) {
             return redirect()->back()->with('error', 'Je hebt geen tekst ingevuld.');
         }
 
-        if($request->file('images')) {
+       
+        if($request->images) {
             foreach($request->file('images') as $key => $image) {
                 $count = $key + 1;
                 
@@ -68,14 +70,13 @@ class NewsArticlesController extends Controller
 
             $attributes['images'] = json_encode($imagepaths);
         }
-        
 
-        $attributes = [
+
+        $attributes += [
             'slug' =>  $slug,
             'title' => $request->title,
             'description' => $request->description,
             'writer' => $request->writer,
-
         ];
 
         $newsarticle->update($attributes);
