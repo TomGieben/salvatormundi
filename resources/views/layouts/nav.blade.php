@@ -22,13 +22,14 @@
     .nav li a{
         color: #fff;
         text-decoration: none;
+        font-size: 20px;
     }
     .nav li a:hover{
         font-weight: bold;
     }
     .nav li{
         list-style: none;
-        padding: 16px 0;
+        padding: 10px 0;
     }
     .nav{
         padding: 0;
@@ -54,8 +55,8 @@
         z-index: 2;	
     }
     .change-bg{
-        width: 390px;
-        height: 630px;
+        width: 520px;
+        height: 580px;
         transform: translate(-60%,-30%);
     }
     .change .bar{
