@@ -4,7 +4,14 @@
     <div>
         <h1 class="my-4">Nieuws artikelen</h1>
     </div>
-    <form action="{{route('admin.newsarticles.store')}}" method="post" enctype="multipart/form-data">
+
+    @if ($message = Session::get('error'))
+        <div class="alert-message alert alert-danger col-12 p-2">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+
+    <form action="{{route('admin.newsarticles.store')}}" method="post">
         @method('post')
         @csrf
     

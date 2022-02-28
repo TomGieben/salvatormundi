@@ -15,9 +15,9 @@ class CreatePhotoGalleryItemsTable extends Migration
     {
         Schema::create('photo_gallery_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('photo_gallery_categories');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

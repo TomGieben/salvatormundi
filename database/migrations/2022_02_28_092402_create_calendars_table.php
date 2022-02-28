@@ -15,12 +15,12 @@ class CreateCalendarsTable extends Migration
     {
         Schema::create('calendar_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('news_article_id');
+            $table->foreignId('news_article_id')->nullable();
             $table->foreign('news_article_id')->references('id')->on('news_articles');
-            $table->string('slug');
-            $table->string('title');
-            $table->text('description');
-            $table->dateTime('start_at');
+            $table->string('slug')->nullable();
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->dateTime('start_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
