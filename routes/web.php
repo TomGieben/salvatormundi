@@ -24,7 +24,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/admin/nieuwsartikelen/update/{newsarticles}', [App\Http\Controllers\NewsArticlesController::class, 'update'])->name('admin.newsarticles.update');
     
     Route::get('/admin/nieuwsbrieven', [App\Http\Controllers\NewslettersController::class, 'index'])->name('admin.newsletters.index');
-    Route::get('/admin/nieuwsbrieven/edit/{newsarticles}', [App\Http\Controllers\NewslettersController::class, 'edit'])->name('admin.newsletters.edit');
-    Route::get('/admin/nieuwsbrieven/delete/{newsarticles}', [App\Http\Controllers\NewslettersController::class, 'delete'])->name('admin.newsletters.delete');
+    Route::get('/admin/nieuwsbrieven/delete/{newsletter}', [App\Http\Controllers\NewslettersController::class, 'delete'])->name('admin.newsletter.delete');
     Route::post('/admin/nieuwsbrieven/store', [App\Http\Controllers\NewslettersController::class, 'store'])->name('admin.newsletters.store');
 });
