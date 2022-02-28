@@ -19,5 +19,4 @@
 <div class="container-fluid bg-primary" style="height: 100vh;">
   {{-- Hier kun jij aan de slag --}}
 </div>
-
 @endsection
