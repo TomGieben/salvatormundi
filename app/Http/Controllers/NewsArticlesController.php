@@ -16,8 +16,9 @@ class NewsArticlesController extends Controller
         ]);
     }
 
-    public function edit(NewsArticles $newsarticle) {
-        
+    public function edit($newsarticle) {
+        $newsarticle = NewsArticles::where('slug', $newsarticle)->first();
+        dd($newsarticle);
     }
 
     public function store(Request $request) {
@@ -30,7 +31,7 @@ class NewsArticlesController extends Controller
                 'title' => $request->title,
             ]);
 
-            return redirect()->route('admin.newsarticles.edit', $newsarticle);
+            return redirect()->route('admin.newsarticles.edit', $newsarticle->slug);
         }
         
     }
