@@ -15,10 +15,17 @@ Route::get('/neiwsbrieven/download/{file}', [App\Http\Controllers\NewsLettersCon
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
 
-    Route::get('/admin/calander', [App\Http\Controllers\Admin\CalenderItemsController::class, 'index'])->name('admin.calendaritems.index');
-    Route::get('/admin/calander/delete/{calendaritem}', [App\Http\Controllers\Admin\CalenderItemsController::class, 'delete'])->name('admin.calendaritems.delete');
-    Route::post('/admin/calander/store', [App\Http\Controllers\Admin\CalenderItemsController::class, 'store'])->name('admin.calendaritems.store');
-    Route::post('/admin/calander/update/{calendaritem}', [App\Http\Controllers\Admin\CalenderItemsController::class, 'update'])->name('admin.calendaritems.update');
+    Route::get('/admin/fotos', [App\Http\Controllers\Admin\PhotoGalleryItemsController::class, 'index'])->name('admin.photogallery.index');
+
+    Route::get('/admin/categorie', [App\Http\Controllers\Admin\PhotoGalleryCategoriesController::class, 'index'])->name('admin.categories.index');
+    Route::get('/admin/categorie/delete/{category}', [App\Http\Controllers\Admin\PhotoGalleryCategoriesController::class, 'delete'])->name('admin.categories.delete');
+    Route::post('/admin/categorie/store', [App\Http\Controllers\Admin\PhotoGalleryCategoriesController::class, 'store'])->name('admin.categories.store');
+    Route::post('/admin/categorie/update/{category}', [App\Http\Controllers\Admin\PhotoGalleryCategoriesController::class, 'update'])->name('admin.categories.update');
+
+    Route::get('/admin/calender', [App\Http\Controllers\Admin\CalenderItemsController::class, 'index'])->name('admin.calendaritems.index');
+    Route::get('/admin/calender/delete/{calendaritem}', [App\Http\Controllers\Admin\CalenderItemsController::class, 'delete'])->name('admin.calendaritems.delete');
+    Route::post('/admin/calender/store', [App\Http\Controllers\Admin\CalenderItemsController::class, 'store'])->name('admin.calendaritems.store');
+    Route::post('/admin/calender/update/{calendaritem}', [App\Http\Controllers\Admin\CalenderItemsController::class, 'update'])->name('admin.calendaritems.update');
 
     Route::get('/admin/nieuwsartikelen', [App\Http\Controllers\Admin\NewsArticlesController::class, 'index'])->name('admin.newsarticles.index');
     Route::get('/admin/nieuwsartikelen/edit/{newsarticles}', [App\Http\Controllers\Admin\NewsArticlesController::class, 'edit'])->name('admin.newsarticles.edit');

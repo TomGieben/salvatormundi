@@ -89,7 +89,7 @@
       <li><a href="{{route('admin.index')}}">Dashboard</a></li>
       <li><a href="#">Teksten</a></li>
       <li><a href="{{route('admin.newsletters.index')}}">Nieuwsbrieven</a></li>
-      <li><a href="#">Fotogalerij</a></li>
+      <li><a href="{{route('admin.photogallery.index')}}">Fotogalerij</a></li>
       <li><a href="#">Gebruikers</a></li>
       <li><a href="{{route('admin.calendaritems.index')}}">Activiteiten</a></li>
       <li><a href="{{route('admin.newsarticles.index')}}">Nieuws</a></li>
