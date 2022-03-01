@@ -2,7 +2,7 @@
 @section('content')
 <div class="container text-dark mt-5">
     <div>
-        <h1 class="my-4">Gebruikers Admin Paneel</h1>
+        <h1 class="my-4">Gebruikers Paneel</h1>
     </div>
 
     @if ($message = Session::get('error'))
@@ -24,7 +24,7 @@
                     Naam: <b>{{$user->name}}</b> |
                     Email: <b>{{$user->email}}</b> |
                     Status: 
-                    @if($user->admin) <span class="text-danger">Admin</span> @else <span class="text-info">Writer</span> @endif |
+                    @if($user->admin) <span class="text-danger">Administrator</span> @else <span class="text-info">Schrijver</span> @endif |
                     <div class="btn-group m-1 float-right">
                         <a href="{{route('admin.users.delete', $user->id)}}" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
@@ -52,9 +52,9 @@
                         <input name="name" type="text" class="form-control my-1" id="name" placeholder="Name" value="{{$user->name}}" required> 
                         <input name="email" type="text" class="form-control my-1" id="text" value="{{$user->email}}" required> 
                         <input name="password" type="text" class="form-control my-1" id="password" placeholder="wacht woord wijzigen">
-                        <label for="admin" class="form-label my-1">Admin:</label>
+                        <label for="admin" class="form-label my-1">Administrator:</label>
                         <input type="checkbox" id="admin" name="admin" @if($user->admin) checked @endif>
-                        <span><i>*Als Admin niet aan gevinkt is ben je automatisch een Schrijver</i></span>
+                        <span><i>*Als Administrator niet aan gevinkt is ben je automatisch een Schrijver</i></span>
                         <div class="my-1">
                             <button type="submit" class="btn btn-success">
                                 <i class="fa fa-save"></i> Opslaan
@@ -99,9 +99,9 @@
                 <label for="password" class="form-label my-1">Wachtwoord:</label>
                 <input type="text" name="password" class="form-control my-1" id="password" placeholder="Wachtwoord">
         
-                <label for="admin" class="form-label my-1">Admin:</label>
+                <label for="admin" class="form-label my-1">Administrator:</label>
                 <input type="checkbox" id="admin" name="admin">
-                <span><i>*Als Admin niet aan gevinkt is ben je automatisch een Schrijver</i></span>
+                <span><i>*Als Administrator niet aan gevinkt is ben je automatisch een Schrijver</i></span>
                 
                 <button type="submit" class="btn btn-success form-control  my-1"><i class="fa fa-plus"></i> Gebruiker Toevoegen</button>
             </div>
