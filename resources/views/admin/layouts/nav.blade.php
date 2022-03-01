@@ -43,16 +43,20 @@
         position: absolute;
     }
     .menu-bg{
-        z-index: 1;
         width: 0;
         height: 0;
         margin: 30px 0 20px 20px;
         background: radial-gradient(circle,#A31621,#A31621);
         border-radius: 50%;
         transition: 0.3s ease;
+        z-index: 999998;	
+        top: 0;
+        position: fixed;
     }
     #menu-bar{
-        z-index: 2;	
+        z-index: 999999;	
+        top: 0;
+        position: fixed;
     }
     .change-bg{
         width: 520px;
@@ -75,7 +79,7 @@
         display: block;
     }
 </style>
-<div id="menu-bar" class="bg-primairy">
+<div id="menu-bar">
     <div id="menu" onclick="onClickMenu()">
         <div id="bar1" class="bar"></div>
         <div id="bar2" class="bar"></div>
@@ -84,13 +88,14 @@
     <ul class="nav" id="nav">
       <li><a href="{{route('admin.index')}}">Dashboard</a></li>
       <li><a href="#">Teksten</a></li>
-      <li><a href="{{route('admin.calendaritems.index')}}">Activiteiten</a></li>
-      <li><a href="{{route('admin.newsarticles.index')}}">Nieuws</a></li>
       <li><a href="{{route('admin.newsletters.index')}}">Nieuwsbrieven</a></li>
       <li><a href="#">Fotogalerij</a></li>
+      <li><a href="#">Gebruikers</a></li>
+      <li><a href="{{route('admin.calendaritems.index')}}">Activiteiten</a></li>
+      <li><a href="{{route('admin.newsarticles.index')}}">Nieuws</a></li>
     </ul>
-    </div>
-    <div class="menu-bg" id="menu-bg"></div>
+</div>
+<div class="menu-bg" id="menu-bg"></div>
 <script>
     function onClickMenu(){
         document.getElementById("menu").classList.toggle("change");

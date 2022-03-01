@@ -43,16 +43,20 @@
         position: absolute;
     }
     .menu-bg{
-        z-index: 1;
         width: 0;
         height: 0;
         margin: 30px 0 20px 20px;
         background: radial-gradient(circle,#A31621,#A31621);
         border-radius: 50%;
         transition: 0.3s ease;
+        z-index: 999998;	
+        top: 0;
+        position: fixed;
     }
     #menu-bar{
-        z-index: 2;	
+        z-index: 999999;	
+        top: 0;
+        position: fixed;
     }
     .change-bg{
         width: 520px;

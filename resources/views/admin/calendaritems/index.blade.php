@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <ul class="list-group">
+    <ul class="list-group" id="list">
         @if($items)
             @foreach ($items as $item)
                 <li class="list-group-item">
@@ -31,10 +31,35 @@
                         <a href="{{route('admin.calendaritems.delete', $item->slug)}}" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                         </a>
-                        <a href="" class="btn btn-warning">
+                        <button onclick="showEdit({{$item->id}})" class="btn btn-warning">
                             <i class="fa fa-pencil"></i>
-                        </a>
+                        </button>
                     </div>
+                </li>
+
+                <li class="list-group-item bg-light" id="item-{{$item->id}}" style="display: none;">
+                    <form action="{{route('admin.calendaritems.update', $item->slug)}}" method="post">
+                        @method('post')
+                        @csrf
+
+                        <input name="title" type="text" class="form-control my-1" id="title" placeholder="Titel" value="{{$item->title}}" required> 
+                        <input name="startdate" type="datetime-local" class="form-control my-1" id="start-date" value="{{$item->start_at}}" required> 
+                        <textarea name="description" type="text" class="form-control my-1" id="description">{{$item->description}}</textarea> 
+                        <select name="newsarticle" id="newsarticle" class="form-control"> 
+                            <option disabled selected>-nieuws artikel-</option>
+                            @foreach($newsarticles as $newsarticle)
+                                <option value="{{$newsarticle->id}}" @if($newsarticle->id == $item->news_article_id) selected @endif>{{$newsarticle->title}}</option>
+                            @endforeach
+                        </select> 
+                        <div class="btn-group my-1">
+                            <button type="button" onclick="closeEdit({{$item->id}})" class="btn btn-danger">
+                                <i class="fa fa-times"></i> Annuleren
+                            </button>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fa fa-save"></i> Opslaan
+                            </button>
+                        </div>
+                    </form>    
                 </li>
             @endforeach
         @endif
@@ -95,6 +120,14 @@
 
     function closePopup() {
         document.getElementById("add").style.display = "none";
+    }
+
+    function showEdit(id) {
+        document.getElementById("item-"+id+"").style.display = "block";
+    }
+
+    function closeEdit(id) {
+        document.getElementById("item-"+id+"").style.display = "none";
     }
 </script>
 @endsection

@@ -20,10 +20,6 @@ class CalenderItemsController extends Controller
         ]);
     }
 
-    public function edit() {
-        
-    }
-
     public function store(Request $request) {
         $slug = Str::slug($request->title);
         if(CalendarItems::where('slug', $slug)->exists()) {
@@ -41,8 +37,22 @@ class CalenderItemsController extends Controller
         }
     }
 
-    public function update() {
+    public function update(Request $request, $calendaritem) {
+        $slug = Str::slug($request->title);
+        $calendaritem = CalendarItems::where('slug', $calendaritem)->first();
+        if(CalendarItems::where('id', '!=', $calendaritem->id)->where('slug', $slug)->exists()) {
+            return redirect()->back()->with('error', 'Er is al een item met de naam: '.$request->title.'');
+        } else {
+           $calendaritem->update([
+                'slug' => $slug,
+                'title' => $request->title,
+                'description' => $request->description,
+                'start_at' => $request->startdate,
+                'news_article_id' => $request->newsarticle,
+            ]);
 
+            return redirect()->back()->with('success', 'Succesvol bewerkt.');
+        }
     }
 
     public function delete($calendaritem) {
