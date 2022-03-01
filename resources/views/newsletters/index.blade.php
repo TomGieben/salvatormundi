@@ -16,7 +16,7 @@
                                     <div class="col-auto">
                                         <div class="btn-group">
                                             <a href="{{route('newsletter.download', $newsletter->file)}}" class="btn btn-success">
-                                                <i class="fa fa-download"> Download</i>
+                                                <i class="fa fa-download"></i> Download
                                             </a>
                                         </div>
                                     </div>
