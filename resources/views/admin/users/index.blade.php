@@ -51,7 +51,7 @@
 
                         <input name="name" type="text" class="form-control my-1" id="name" placeholder="Name" value="{{$user->name}}" required> 
                         <input name="email" type="text" class="form-control my-1" id="text" value="{{$user->email}}" required> 
-                        <input name="password" type="text" class="form-control my-1" id="password" placeholder="wacht woord wijzigen">
+                        <input name="password" type="text" class="form-control my-1" id="password" placeholder="wachtwoord wijzigen">
                         <label for="admin" class="form-label my-1">Administrator:</label>
                         <input type="checkbox" id="admin" name="admin" @if($user->admin) checked @endif>
                         <span><i>*Als Administrator niet aan gevinkt is ben je automatisch een Schrijver</i></span>
