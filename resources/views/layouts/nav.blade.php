@@ -86,11 +86,11 @@
         <div id="bar3" class="bar"></div>
     </div>
     <ul class="nav" id="nav">
-      <li><a href="#">Home</a></li>
+      <li><a href="{{route('welcome.index')}}">Home</a></li>
       <li><a href="#">Over ons</a></li>
       <li><a href="#">Activiteiten</a></li>
       <li><a href="#">Nieuws</a></li>
-      <li><a href="#">Nieuwsbrieven</a></li>
+      <li><a href="{{route('newsletters.index')}}">Nieuwsbrieven</a></li>
       <li><a href="#">Fotogalerij</a></li>
       <li><a href="#">Contact</a></li>
     </ul>

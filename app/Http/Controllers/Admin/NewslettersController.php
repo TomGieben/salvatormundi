@@ -15,7 +15,6 @@ class NewslettersController extends Controller
         return view('admin.newsletters.index', [
             'newsletters' => $newsletters,
         ]);
-        return view('admin.newsletters.index');
     }
 
     public function store(Request $request) {
@@ -31,7 +30,7 @@ class NewslettersController extends Controller
             $newsletters = Newsletters::create([
                 'slug' => $slug,
                 'title' => $request->title,
-                'file' => $path,
+                'file' => $filename,
             ]);
             return redirect(route('admin.newsletters.index'));
         }
@@ -42,9 +41,5 @@ class NewslettersController extends Controller
         unlink(storage_path('app/'.$letter->file));
         $letter->delete();
         return redirect()->back()->with('success', 'Artikel succesvol verwijderd.');
-    }
-
-    private function download($file){
-        return response()->download(storage_path('/storage/app/files/'.$file));
     }
 }
