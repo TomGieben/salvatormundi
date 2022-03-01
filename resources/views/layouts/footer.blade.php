@@ -1,4 +1,4 @@
-<footer class="bg-warning text-center text-white float-bottom">
+<footer class="bg-secondary text-center text-white float-bottom">
     <div class="container p-4">
         <section class="mb-4">
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
