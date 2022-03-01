@@ -16,6 +16,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
 
     Route::get('/admin/fotos', [App\Http\Controllers\Admin\PhotoGalleryItemsController::class, 'index'])->name('admin.photogallery.index');
+    Route::get('/admin/fotos/create', [App\Http\Controllers\Admin\PhotoGalleryItemsController::class, 'create'])->name('admin.photogallery.create');
+    Route::post('/admin/fotos/store', [App\Http\Controllers\Admin\PhotoGalleryItemsController::class, 'store'])->name('admin.photogallery.store');
 
     Route::get('/admin/categorie', [App\Http\Controllers\Admin\PhotoGalleryCategoriesController::class, 'index'])->name('admin.categories.index');
     Route::get('/admin/categorie/delete/{category}', [App\Http\Controllers\Admin\PhotoGalleryCategoriesController::class, 'delete'])->name('admin.categories.delete');
