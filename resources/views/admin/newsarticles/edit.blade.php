@@ -40,7 +40,7 @@
             <div class="col-12 my-1">
                 <label for="pin" class="my-1">Pin: </label>
                 <input class="my-1" name="pin" id="pin" type="checkbox" @if($newsarticle->pin) checked @else @endif>
-                <i>*Laat een popup zien met link naar het article.</i>
+                <i>*Weergeeft een melding op de website van dit artikel.</i>
             </div>
         </div>
         <button type="submit" class="btn btn-success">
