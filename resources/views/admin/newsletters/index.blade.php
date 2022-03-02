@@ -37,7 +37,7 @@
                         <div class="row justify-content-between">
                             <div class="col-auto">
                                 <div class="btn-group">
-                                    <a href="" class="btn btn-success">
+                                    <a href="{{route('newsletters.index')}}?slug={{$newsletter->slug}}" class="btn btn-success">
                                         <i class="fa fa-eye"></i>
                                     </a>
                                     <a href="{{route('admin.newsletter.delete', $newsletter->slug)}}" class="btn btn-danger">
