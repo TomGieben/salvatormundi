@@ -24,7 +24,7 @@
 	<div class="row">
 		@foreach($newsArticles as $newsArticle)
 			<div class="col-sm-6 col-md-4 p-sm-3 p-md-4 m-md-0 my-1">
-				<div class="card rounded border-0" onclick="window.location.href='" style="cursor: pointer;">
+				<div class="card rounded border-0" onclick="window.location.href='{{route('newsarticles.show', $newsArticle->slug)}}'" style="cursor: pointer;">
 					<img src="{{url('storage/img/newsarticles/'.json_decode($newsArticle->images, true)[0])}}" class="bg-primary rounded" style="height: 300px; width: auto;">
 					<div class="card-body">
 						<div class="row d-flex justify-content-between">
@@ -34,10 +34,8 @@
 								</h5>
 							</div>
 							<div class="col-auto">
-								<h5>
-									<a href="">
-										Meer lezen <i class="fa fa-arrow-right"></i>
-									</a>
+								<h5 class="text-primary">
+									Meer lezen <i class="fa fa-arrow-right"></i>
 								</h5>
 							</div>
 						</div>
@@ -76,7 +74,7 @@
 								</div>
 								<div class="col-auto">
 									@if($calenderItem->newsArticle)
-										<a href="" class="btn btn-link text-secondary">
+										<a href="{{route('newsarticles.show', $calenderItem->newsArticle->slug)}}" class="btn btn-link text-secondary">
 											Bekijken <i class="fa fa-arrow-right"></i> 
 										</a>
 									@endif
@@ -129,7 +127,7 @@
 
       Swal.fire({
         title: "<b><h2>"+title+"</h2></b>", 
-        html: "<img class='rounded w-100' src='"+image+"' style='height: 250px;''> <br> <p class='mt-2'>Dit is de tekst die hij zelf kan aanpassen</p> <br> <a href='' class='btn btn-link text-primary m-1'>Meer lezen <i class='fa fa-arrow-right'></i></a>",  
+        html: "<img class='rounded w-100' src='"+image+"' style='height: 250px;''> <br> <p class='mt-2'>Dit is de tekst die hij zelf kan aanpassen</p> <br> <a href='{{route('newsarticles.show', $pinnedArticle->slug)}}' class='btn btn-link text-primary m-1'>Meer lezen <i class='fa fa-arrow-right'></i></a>",  
         showCancelButton: false, 
         showConfirmButton: false,
       });

@@ -9,7 +9,10 @@ Auth::routes([
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome.index');
 
-Route::get('/niewusbrieven', [App\Http\Controllers\NewsLettersController::class, 'index'])->name('newsletters.index');
+Route::get('/nieuws', [App\Http\Controllers\NewsArticlesController::class, 'index'])->name('newsarticles.index');
+Route::get('/nieuws/{newsarticle}', [App\Http\Controllers\NewsArticlesController::class, 'show'])->name('newsarticles.show');
+
+Route::get('/nieuwsbrieven', [App\Http\Controllers\NewsLettersController::class, 'index'])->name('newsletters.index');
 Route::get('/nieuwsbrieven/download/{file}', [App\Http\Controllers\NewsLettersController::class, 'download'])->name('newsletter.download');
 
 Route::get('/over-ons', [App\Http\Controllers\AboutusController::class, 'index'])->name('aboutus.index');
