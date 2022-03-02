@@ -38,11 +38,9 @@
 @endif
 <script>
   const images = [
-    "{{url('/storage/img/photogallery/'.$images[0]['image'].'')}}",
-    "{{url('/storage/img/photogallery/'.$images[1]['image'].'')}}",
-    "{{url('/storage/img/photogallery/'.$images[2]['image'].'')}}",
-    "{{url('/storage/img/photogallery/'.$images[3]['image'].'')}}",
-    "{{url('/storage/img/photogallery/'.$images[4]['image'].'')}}",
+    @foreach($images as $image)
+      "{{url('/storage/img/photogallery/'.$image['image'].'')}}",
+    @endforeach
   ];
 
   slide()
