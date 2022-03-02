@@ -39,7 +39,7 @@
             </div>
             <div class="col-12 my-1">
                 <label for="pin" class="my-1">Pin: </label>
-                <input class="my-1" name="pin" id="pin" type="checkbox" @if($newsarticle->pin) checked @else @endif>
+                <input class="my-1" name="pin" id="pin" type="checkbox" @if($newsarticle->pin) checked @endif>
                 <i>*Laat een popup zien met link naar het article.</i>
             </div>
         </div>
