@@ -36,20 +36,22 @@
       });
   </script>
 @endif
-<script>
-  const images = [
-    @foreach($images as $image)
-      "{{url('/storage/img/photogallery/'.$image['image'].'')}}",
-    @endforeach
-  ];
+@if($images)
+  <script>
+    const images = [
+      @foreach($images as $image)
+        "{{url('/storage/img/photogallery/'.$image['image'].'')}}",
+      @endforeach
+    ];
 
-  slide()
-  setInterval(slide, 5000);
+    slide()
+    setInterval(slide, 5000);
 
-  function slide() {
-    var rand = Math.floor(Math.random() * images.length);
-    var element = document.getElementById('carousel');
-    element.style = "background-image: url('"+images[rand]+"');";
-  }
-</script>
+    function slide() {
+      var rand = Math.floor(Math.random() * images.length);
+      var element = document.getElementById('carousel');
+      element.style = "background-image: url('"+images[rand]+"');";
+    }
+  </script>
+@endif
 @endsection

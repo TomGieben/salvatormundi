@@ -12,7 +12,11 @@ class WelcomeController extends Controller
     function index()
     {
         $pinnedArticle = NewsArticles::where('pin', true)->first();
-        $images = PhotoGalleryItems::all()->random(5)->toArray();
+        if(PhotoGalleryItems::all()) {
+            $images = PhotoGalleryItems::all()->random(5)->toArray();
+        } else {
+            $images = null;
+        }
 
         return view('welcome', [
             'pinnedArticle' => $pinnedArticle,
