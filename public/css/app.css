@@ -10073,3 +10073,7 @@ polygon.arrow-middle {
 polygon.arrow-top {
   opacity: 0.5;
 }
+
+.btn-hover:hover {
+  color: #DC3545;
+}

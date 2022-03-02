@@ -58,7 +58,9 @@ class PhotoGalleryItemsController extends Controller
         return redirect()->route('admin.photogallery.index')->with('success', 'De afbeeldingen zijn succesvol opgeslagen');
     }
 
-    public function delete() {
-        
+    public function delete(PhotoGalleryItems $item) {
+        unlink(public_path('storage/img/photogallery/'.$item->image));
+        $item->delete();
+        return redirect()->back()->with('success', 'De afbeelding is succesvol verwijderd.');
     }
 }

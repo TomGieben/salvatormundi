@@ -36,7 +36,10 @@
                 @if($categorie->images)
                     @foreach ($categorie->images as $image)
                         <div class="col-md-4 p-1">
-                            <img class="rounded w-100" src="{{url('storage/img/photogallery/'.$image->image)}}" alt="{{$image->title}}" style="height: 250px;">
+                            <img class="rounded w-100" src="{{url('storage/img/photogallery/'.$image->image)}}" style="height: 250px;">
+                            <a href="{{route('admin.photogallery.delete', $image->id)}}" class="btn btn-hover">
+                                <i class="fa fa-trash"></i>
+                            </a>
                         </div>
                     @endforeach
                 @endif
