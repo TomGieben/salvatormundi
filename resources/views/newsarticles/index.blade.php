@@ -6,7 +6,7 @@
         <hr>
     </div>
 </div>
-<div class="container">
+<div class="container" style="min-height: 100vh;">
     <div class="row my-4">
         @if($newsArticles->count() !== 0)
            @foreach($newsArticles as $newsArticle)
