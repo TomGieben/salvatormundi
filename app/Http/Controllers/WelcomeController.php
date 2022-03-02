@@ -13,7 +13,7 @@ class WelcomeController extends Controller
     {
         $pinnedArticle = NewsArticles::where('pin', true)->first();
         $images = PhotoGalleryItems::all();
-        if($images) {
+        if(count($images) > 0) {
             $images = $images->random(5)->toArray();
         } else {
             $images = null;
