@@ -25,7 +25,7 @@
 		@foreach($newsArticles as $newsArticle)
 			<div class="col-sm-6 col-md-4 p-sm-3 p-md-4 m-md-0 my-1">
 				<div class="card rounded border-0" onclick="window.location.href='" style="cursor: pointer;">
-					<img src="{{url('storage/img/newsarticles/'.json_decode($newsArticle->images, true)[0])}}" class="bg-primary rounded" style="height: 400px; width: auto;">
+					<img src="{{url('storage/img/newsarticles/'.json_decode($newsArticle->images, true)[0])}}" class="bg-primary rounded" style="height: 300px; width: auto;">
 					<div class="card-body">
 						<div class="row d-flex justify-content-between">
 							<div class="col-auto">
@@ -59,22 +59,59 @@
 		<a href="" class="btn btn-light my-1">Lees meer over ons</a>
 	</div>
 </div>
+<div class="container-fluid px-md-5 py-md-5">
+	<h2 class="h1 text-center">Onze activiteiten</h2>
+	<hr>
+	<div class="container">
+		<div class="row">
+			@foreach($calenderItems as $calenderItem)
+				<div class="col-md-3 col-12 my-3">
+					<div class="card">
+						<div class="card-header">
+							<div class="row justify-content-between">
+								<div class="col-auto">
+									<div class="card-title mt-1">
+										{{$calenderItem->title}}
+									</div>
+								</div>
+								<div class="col-auto">
+									@if($calenderItem->newsArticle)
+										<a href="" class="btn btn-link text-secondary">
+											Bekijken <i class="fa fa-arrow-right"></i> 
+										</a>
+									@endif
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<p class="font-wieght-light">{{$calenderItem->description}}</p>
+							<i class="fa fa-clock"></i> {{$calenderItem->start_at}}
+						</div>
+					</div>
+				</div>
+			@endforeach
+		</div>
+	</div>
+	<hr>
+</div>
 <div class="container py-md-5 py-3 my-4">
 	<div class="row justify-content-between">
-		<div class="col-md-5 col-12 align-self-center">
+		<div class="col-md-5 col-12 align-self-center my-4">
 			<h2 class="h1">Fotogalerij</h2>
 			<p class="h5 font-weight-light">
 				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam officia, magni ducimus quae iste, quod accusantium omnis sapiente possimus placeat, unde modi dicta beatae aspernatur? Tempore tenetur facere cumque facilis culpa, a iusto amet error suscipit ex vel explicabo eaque totam perspiciatis ducimus veritatis nihil animi possimus fugit cum? Dolor maxime tempore possimus aut ex rerum aliquid obcaecati commodi distinctio.
 			</p>
 			<a href="" class="btn btn-secondary my-1">Bekijk meer foto's</a>
 		</div>
-		<div class="col-md-6 col-12">
-			<img loading="lazy" src="" class="img-fluid rounded shadow-lg mt-2" alt="Wandel met ons" width="685px" height="527px">
-		</div>
-		<div class="col-md-6 col-12 mt-2">
-			<img loading="lazy" src="" class="img-fluid rounded shadow-lg" alt="Wandel met ons" width="685px" height="527px">
-		</div>
-		<div class="col-md-5 col-12 mt-2 align-self-center">
+		@if($images)
+			<div class="col-md-6 col-12">
+				<img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[1]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" width="685px" height="527px">
+			</div>
+			<div class="col-md-6 col-12 mt-2">
+				<img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[2]['image'].'')}}" class="img-fluid rounded shadow-lg" width="685px" height="527px">
+			</div>
+		@endif
+		<div class="col-md-5 col-12 align-self-center my-4">
 			<h2 class="h1">Heeft u vragen?</h2>
 			<p class="h5 font-weight-light">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quibusdam iste modi expedita non nihil reiciendis, assumenda saepe. Facere harum aut dignissimos, adipisci, quaerat illum voluptatum deleniti assumenda beatae sint esse iure velit pariatur. Consequuntur debitis laborum corporis architecto sunt officia nihil voluptatem, autem veritatis. Libero facere velit dicta voluptatem illum sint exercitationem consequuntur repudiandae explicabo est! Velit quis blanditiis optio est. Nostrum doloribus dolore recusandae a dolorum impedit ut adipisci provident. Nihil quod natus fuga praesentium quaerat sapiente in!

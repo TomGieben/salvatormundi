@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CalendarItems;
 use App\Models\NewsArticles;
 use App\Models\PhotoGalleryItems;
 use App\Models\ToDoList;
@@ -11,6 +12,7 @@ class WelcomeController extends Controller
 {
     function index()
     {
+        $calenderItems = CalendarItems::latest('created_at')->with('newsarticle')->take(8)->get();
         $newsArticles = NewsArticles::latest('created_at')->take(3)->get();
         $pinnedArticle = NewsArticles::where('pin', true)->first();
         $images = PhotoGalleryItems::all();
@@ -23,6 +25,7 @@ class WelcomeController extends Controller
         return view('welcome', [
             'newsArticles' => $newsArticles,
             'pinnedArticle' => $pinnedArticle,
+            'calenderItems' => $calenderItems,
             'images' => $images,
         ]);
     }
