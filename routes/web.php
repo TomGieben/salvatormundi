@@ -9,10 +9,10 @@ Auth::routes([
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome.index');
 
-Route::get('/neiwsbrieven', [App\Http\Controllers\NewsLettersController::class, 'index'])->name('newsletters.index');
-Route::get('/neiwsbrieven/download/{file}', [App\Http\Controllers\NewsLettersController::class, 'download'])->name('newsletter.download');
+Route::get('/niewusbrieven', [App\Http\Controllers\NewsLettersController::class, 'index'])->name('newsletters.index');
+Route::get('/nieuwsbrieven/download/{file}', [App\Http\Controllers\NewsLettersController::class, 'download'])->name('newsletter.download');
 
-Route::get('/overons', [App\Http\Controllers\AboutusController::class, 'index'])->name('aboutus.index');
+Route::get('/over-ons', [App\Http\Controllers\AboutusController::class, 'index'])->name('aboutus.index');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');

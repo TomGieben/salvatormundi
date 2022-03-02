@@ -12,6 +12,6 @@
         </section>
     </div>
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © {{date('Y')}} <a class="text-white" href="#">Gilde Salvator Mundi</a>
+        © {{date('Y')}} <a class="text-white" href="{{route('welcome.index')}}">Gilde Salvator Mundi</a>
     </div>
 </footer>

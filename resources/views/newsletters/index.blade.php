@@ -12,7 +12,7 @@
                 @foreach($newsletters as $newsletter)
                     @if ($newsletter->slug !== "gilde-lied")
                         <div class="col-md-4 my-2">
-                            <div class="card">
+                            <div class="card @if($requestSlug == $newsletter->slug) border border-danger @endif">
                                 <div class="card-header">
                                     <div class="card-title">
                                         <h3>{{$newsletter->title}}</h3>
@@ -37,17 +37,19 @@
                             <div class="title my-4">
                                 <hr>
                             </div>
-                            <div class="card-header">
-                                <div class="card-title text-center">
-                                    <h3 class="mb-0">{{$newsletter->title}}</h3>
+                            <div class="card @if($requestSlug == $newsletter->slug) border border-danger @endif">
+                                <div class="card-header">
+                                    <div class="card-title text-center">
+                                        <h3 class="mb-0">Gilde Lied</h3>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row justify-content-between">
-                                    <div class="btn-group col-12">
-                                        <a href="{{route('newsletter.download', $newsletter->file)}}" class="btn btn-success">
-                                            <i class="fa fa-download"></i> Download
-                                        </a>
+                                <div class="card-footer">
+                                    <div class="row justify-content-between">
+                                        <div class="btn-group col-12">
+                                            <a href="{{route('newsletter.download', $newsletter->file)}}" class="btn btn-success">
+                                                <i class="fa fa-download"></i> Download
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

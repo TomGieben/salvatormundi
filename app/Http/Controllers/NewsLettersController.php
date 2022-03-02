@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 
 class NewsLettersController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $newsletters = Newsletters::all();
         return view('newsletters.index', [
             'newsletters' => $newsletters,
+            'requestSlug' => $request->slug,
         ]);
 
         return view('newsletters.index');
