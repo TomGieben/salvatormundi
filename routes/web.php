@@ -9,6 +9,9 @@ Auth::routes([
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome.index');
 
+Route::get('/calender', [App\Http\Controllers\CalenderItemsController::class, 'index'])->name('calendaritems.index');
+Route::get('/calender/{calendaritem}', [App\Http\Controllers\CalenderItemsController::class, 'show'])->name('calendaritems.show');
+
 Route::get('/nieuws', [App\Http\Controllers\NewsArticlesController::class, 'index'])->name('newsarticles.index');
 Route::get('/nieuws/{newsarticle}', [App\Http\Controllers\NewsArticlesController::class, 'show'])->name('newsarticles.show');
 

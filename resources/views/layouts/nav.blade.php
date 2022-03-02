@@ -88,7 +88,7 @@
     <ul class="nav" id="nav">
       <li><a href="{{route('welcome.index')}}">Home</a></li>
       <li><a href="{{route('aboutus.index')}}">Over ons</a></li>
-      <li><a href="#">Activiteiten</a></li>
+      <li><a href="{{route('calendaritems.index')}}">Activiteiten</a></li>
       <li><a href="{{route('newsarticles.index')}}">Nieuws</a></li>
       <li><a href="{{route('newsletters.index')}}">Nieuwsbrieven</a></li>
       <li><a href="#">Fotogalerij</a></li>
