@@ -5,6 +5,12 @@
         <hr>
     </div>
     <div class="container">
+        <div class="h6 text-center my-2">
+            Oi
+        </div>
+        <hr>
+    </div>
+    <div class="container">
         @if ($message = Session::get('error'))
         <div class="alert-message alert alert-danger col-12 p-2">
             <p>{{ $message }}</p>

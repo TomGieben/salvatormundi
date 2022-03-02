@@ -78,8 +78,8 @@ class NewsArticlesController extends Controller
             } else {
                 if($pinnedArticle){
                     NewsArticles::where('id', $pinnedArticle->id)->update(['pin' => 0]);
-                    $pin = 1;
-                }   
+                }
+                $pin = 1; 
             }
         } else {
             $pin = 0;
