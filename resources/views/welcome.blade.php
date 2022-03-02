@@ -4,7 +4,7 @@
   <div class="container" style="height: 100vh;">
       <div class="row">
           <div class="col-12 text-center py-5">
-              <h1 class="h1 font-weight-bold text-dark">Gilde salvator mundi</h1>
+              <h1 class="h1 font-weight-bold text-dark">Gilde Salvator Mundi</h1>
               <div class="content">
                 <svg id="more-arrows">
                   <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
