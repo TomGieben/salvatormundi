@@ -27,7 +27,7 @@
                         Gekoppeld: <a href="" class="text-dark"><b>{{$item->newsarticle->title}}</b></a> |
                     @endif
                     Beschrijving: @if($item->description) <i class="fa fa-check text-success"></i> @else <i class="fa fa-times text-danger"></i> @endif |
-                    <div class="btn-group m-1">
+                    <div class="btn-group m-1 float-right">
                         <a href="{{route('admin.calendaritems.delete', $item->slug)}}" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                         </a>

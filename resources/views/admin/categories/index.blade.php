@@ -21,8 +21,8 @@
         <ul class="list-group" id="list">
             @foreach ($categories as $categorie)
                 <li class="list-group-item">
-                    {{$categorie->title}}
-                    <div class="btn-group m-1">
+                    Titel: <b>{{$categorie->title}}</b>
+                    <div class="btn-group m-1 float-right">
                         <a href="{{route('admin.categories.delete', $categorie->slug)}}" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                         </a>

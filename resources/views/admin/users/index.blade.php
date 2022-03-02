@@ -65,7 +65,7 @@
         @endif
         <li class="list-group-item">
             <button onclick="showPopup()" class="btn btn-success w-100">
-                Nieuwe Gebruiker
+                <i class="fa fa-plus"></i> Toevoegen
             </button>
         </li>
     </ul>
@@ -103,7 +103,7 @@
                 <input type="checkbox" id="admin" name="admin">
                 <span><i>*Als Administrator niet aan gevinkt is ben je automatisch een Schrijver</i></span>
                 
-                <button type="submit" class="btn btn-success form-control  my-1"><i class="fa fa-plus"></i> Gebruiker Toevoegen</button>
+                <button type="submit" class="btn btn-success form-control  my-1"><i class="fa fa-save"></i> Opslaan</button>
             </div>
         </div>
     </form> 
