@@ -47,7 +47,7 @@
   setInterval(slide, 5000);
 
   function slide() {
-    var rand = Math.floor(Math.random() * 4);
+    var rand = Math.floor(Math.random() * images.length);
     var element = document.getElementById('carousel');
     element.style = "background-image: url('"+images[rand]+"');";
   }

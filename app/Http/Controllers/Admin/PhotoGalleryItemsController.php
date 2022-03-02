@@ -43,7 +43,7 @@ class PhotoGalleryItemsController extends Controller
         
                 $imgFile = Image::make($image->getRealPath());
         
-                $imgFile->resize(800, 3000, function ($constraint) {
+                $imgFile->resize(1600, 6000, function ($constraint) {
                     $constraint->aspectRatio();
                 })->save($destinationPath.'/'.$input['file']);
     
