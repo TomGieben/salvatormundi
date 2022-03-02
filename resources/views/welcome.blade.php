@@ -22,14 +22,13 @@
 
 @if($pinnedArticle)
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  @php($description = strip_tags(substr($pinnedArticle->description,0,strpos($pinnedArticle->description, ' ',250))))
   <script>
       var title = "{{$pinnedArticle->title}}";
       var image = "{{url('/storage/img/newsarticles/'.json_decode($pinnedArticle->images, true)[0].'')}}";
 
       Swal.fire({
         title: "<b><h2>"+title+"</h2></b>", 
-        html: "<img class='rounded w-100' src='"+image+"' style='height: 250px;''> <br> <p>Dit is de tekst die hij zelf kan aanpassen</p> <br> <a href='' class='btn btn-link text-primary'>Meer lezen <i class='fa fa-arrow-right'></i></a>",  
+        html: "<img class='rounded w-100' src='"+image+"' style='height: 250px;''> <br> <p class='mt-2'>Dit is de tekst die hij zelf kan aanpassen</p> <br> <a href='' class='btn btn-link text-primary m-1'>Meer lezen <i class='fa fa-arrow-right'></i></a>",  
         showCancelButton: false, 
         showConfirmButton: false,
       });
