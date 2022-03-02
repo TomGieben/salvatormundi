@@ -92,7 +92,7 @@
       <li><a href="{{route('newsarticles.index')}}">Nieuws</a></li>
       <li><a href="{{route('newsletters.index')}}">Nieuwsbrieven</a></li>
       <li><a href="#">Fotogalerij</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="{{route('contact.index')}}">Contact</a></li>
     </ul>
 </div>
     <div class="menu-bg position-fixed" id="menu-bg"></div>
