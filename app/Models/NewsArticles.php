@@ -17,6 +17,7 @@ class NewsArticles extends Model
         'description',
         'writer',
         'images',
+        'pin',
     ];
 
     public function calendaritems() :HasMany

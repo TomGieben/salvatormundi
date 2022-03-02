@@ -37,10 +37,15 @@
                 <label for="description my-1" class="form-label">Tekst:</label>
                 <textarea class="tinymce form-control" name="description" id="description">@if(old()) {{old('description')}} @else {{$newsarticle->description}} @endif</textarea>
             </div>
+            <div class="col-12 my-1">
+                <label for="pin" class="my-1">Pin: </label>
+                <input class="my-1" name="pin" id="pin" type="checkbox" @if($newsarticle->pin) checked @else @endif>
+                <i>*Laat een popup zien met link naar het article.</i>
+            </div>
         </div>
         <button type="submit" class="btn btn-success">
             <i class="fa fa-save"></i> Toevoegen
         </button>
-    </from>
+    </form>
 </div>
 @endsection

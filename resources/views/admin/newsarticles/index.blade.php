@@ -34,8 +34,11 @@
             <div class="col-md-4 my-4">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">
-                            <h2>{{$newsarticle->title}}</h2>
+                        <div class="row">
+                            <div class="card-title col">
+                                <h2>{{$newsarticle->title}}</h2>
+                            </div>
+                            @if($newsarticle->pin)<div class="col-auto mt-1"><h4><i class="fa fa-thumb-tack"></i></h4></div> @endif
                         </div>
                     </div>
                     <div class="card-body p-2">

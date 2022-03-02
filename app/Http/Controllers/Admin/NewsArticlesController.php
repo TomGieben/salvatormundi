@@ -41,6 +41,7 @@ class NewsArticlesController extends Controller
     }
 
     public function update(Request $request, $newsarticle) {
+        $pinnedArtice = NewsArticles::where('pin', 1)->first();
         $newsarticle = NewsArticles::where('slug', $newsarticle)->first();
         $slug = Str::slug($request->title);
         $imagepaths = [];
@@ -71,13 +72,21 @@ class NewsArticlesController extends Controller
 
             $attributes['images'] = json_encode($imagepaths);
         }
-
+        if($request->pin == "on"){
+            if($pinnedArtice){
+                NewsArticles::where('id', $pinnedArtice->id)->update(['pin' => 0]);
+            }
+            $pin = 1;
+        } else {
+            $pin = 0;
+        }
 
         $attributes += [
             'slug' =>  $slug,
             'title' => $request->title,
             'description' => $request->description,
             'writer' => $request->writer,
+            'pin' => $pin,
         ];
 
         $newsarticle->update($attributes);
