@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="container">
+    <div class="container my-5">
         <div class="title my-4">
             <h1>Nieuwsbrieven</h1>
             <hr>
@@ -8,7 +8,7 @@
     </div>
     <div class="container">
         <div class="row my-4">
-            @if(!$newsletters->count() == 0)
+            @if(!$newsletters->count() !== 0)
                 @foreach($newsletters as $newsletter)
                     @if ($newsletter->slug !== "gilde-lied")
                         <div class="col-md-4 my-2">
