@@ -87,7 +87,7 @@
     </div>
     <ul class="nav" id="nav">
       <li><a href="{{route('welcome.index')}}">Home</a></li>
-      <li><a href="#">Over ons</a></li>
+      <li><a href="{{route('aboutus.index')}}">Over ons</a></li>
       <li><a href="#">Activiteiten</a></li>
       <li><a href="#">Nieuws</a></li>
       <li><a href="{{route('newsletters.index')}}">Nieuwsbrieven</a></li>
