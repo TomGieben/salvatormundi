@@ -11,6 +11,7 @@ class WelcomeController extends Controller
 {
     function index()
     {
+        $newsArticles = NewsArticles::latest('created_at')->take(3)->get();
         $pinnedArticle = NewsArticles::where('pin', true)->first();
         $images = PhotoGalleryItems::all();
         if(count($images) > 0) {
@@ -20,6 +21,7 @@ class WelcomeController extends Controller
         }
 
         return view('welcome', [
+            'newsArticles' => $newsArticles,
             'pinnedArticle' => $pinnedArticle,
             'images' => $images,
         ]);
