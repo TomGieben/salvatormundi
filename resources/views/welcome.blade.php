@@ -47,11 +47,11 @@
 </div>
 <div class="container-fluid py-md-5 py-3 my-4 bg-primary">
 	<div class="text-center">
-		<h2 class="h1">Wie zijn wij?</h2>
+		<h2 class="h1">{{text()['title']['who-are-we-text']}}</h2>
 		<hr>
 		<div class="container">
 			<p class="h5 font-weight-light my-4">
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo iusto, ad, nemo minima laboriosam excepturi vero velit repellat dolore alias animi a! Aperiam vel quam eum facere. Consequatur voluptas sapiente, debitis aliquam delectus sed? Recusandae, suscipit voluptatem distinctio vel, illo autem quo mollitia vitae quia consectetur ea error neque incidunt nulla, eius deserunt dolorum explicabo illum quidem? Obcaecati minus molestias accusamus libero corrupti? Deleniti, natus repellat! Consectetur voluptate laboriosam harum deserunt ab et iusto voluptatem, eveniet error fugiat voluptas qui ex doloribus est perspiciatis, doloremque fuga ducimus? Sequi deserunt fugiat hic? Eaque ullam est rerum. Commodi est vero numquam excepturi debitis eum, repellendus consequatur sunt voluptatem rem quidem ea, modi vel error perferendis! Dolores est aspernatur laboriosam iste sunt magni, soluta, omnis rerum commodi distinctio repellat vel enim eligendi blanditiis debitis autem similique optio asperiores ad nesciunt iure provident unde repellendus. Aliquam recusandae ratione numquam quos nulla, perspiciatis ut assumenda.
+				{{text()['text']['who-are-we-text']}}
 			</p>
 		</div>
 		<a href="{{route('aboutus.index')}}" class="btn btn-light my-1">Lees meer over ons</a>
@@ -83,7 +83,7 @@
 						</div>
 						<div class="card-body">
 							<p class="font-wieght-light">{{$calenderItem->description}}</p>
-							<i class="fa fa-clock"></i> {{$calenderItem->start_at}}
+							<i class="fa fa-clock"></i> {{ date('d-m-Y H:i', strtotime($calenderItem->start_at)) }}
 						</div>
 					</div>
 				</div>
@@ -95,9 +95,9 @@
 <div class="container py-md-5 py-3 my-4">
 	<div class="row justify-content-between">
 		<div class="col-md-5 col-12 align-self-center my-4">
-			<h2 class="h1">Fotogalerij</h2>
+			<h2 class="h1">{{text()['title']['picture-gallery-text']}}</h2>
 			<p class="h5 font-weight-light">
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam officia, magni ducimus quae iste, quod accusantium omnis sapiente possimus placeat, unde modi dicta beatae aspernatur? Tempore tenetur facere cumque facilis culpa, a iusto amet error suscipit ex vel explicabo eaque totam perspiciatis ducimus veritatis nihil animi possimus fugit cum? Dolor maxime tempore possimus aut ex rerum aliquid obcaecati commodi distinctio.
+				{{text()['text']['picture-gallery-text']}}
 			</p>
 			<a href="{{route('photogallery.index')}}" class="btn btn-secondary my-1">Bekijk meer foto's</a>
 		</div>
@@ -110,9 +110,9 @@
 			</div>
 		@endif
 		<div class="col-md-5 col-12 align-self-center my-4">
-			<h2 class="h1">Heeft u vragen?</h2>
+			<h2 class="h1">{{text()['title']['any-questions-text']}}</h2>
 			<p class="h5 font-weight-light">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quibusdam iste modi expedita non nihil reiciendis, assumenda saepe. Facere harum aut dignissimos, adipisci, quaerat illum voluptatum deleniti assumenda beatae sint esse iure velit pariatur. Consequuntur debitis laborum corporis architecto sunt officia nihil voluptatem, autem veritatis. Libero facere velit dicta voluptatem illum sint exercitationem consequuntur repudiandae explicabo est! Velit quis blanditiis optio est. Nostrum doloribus dolore recusandae a dolorum impedit ut adipisci provident. Nihil quod natus fuga praesentium quaerat sapiente in!
+				{{text()['text']['any-questions-text']}}
 			</p>
 			<a href="{{route('contact.index')}}" class="btn btn-primary my-1">Contact opnemen</a>
 		</div>

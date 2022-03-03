@@ -6,7 +6,7 @@
     </div>
     <div class="container">
         <div class="h6 text-center my-2">
-            Oi
+            {{text()['text']['contact-text']}}
         </div>
         <hr>
     </div>

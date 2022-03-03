@@ -12,15 +12,15 @@
                 <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[1]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" width="685px" height="527px">
             </div>
             <div class="col-md-5 col-12 align-self-center">
-                <h2 class="h1">Historie</h2>
+                <h2 class="h1">{{text()['title']['history-text']}}</h2>
                 <p class="h5 font-weight-light">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam officia, magni ducimus quae iste, quod accusantium omnis sapiente possimus placeat, unde modi dicta beatae aspernatur? Tempore tenetur facere cumque facilis culpa, a iusto amet error suscipit ex vel explicabo eaque totam perspiciatis ducimus veritatis nihil animi possimus fugit cum? Dolor maxime tempore possimus aut ex rerum aliquid obcaecati commodi distinctio.
+                    {{text()['text']['history-text']}}
                 </p>
             </div>
             <div class="col-md-5 col-12 mt-2 align-self-center">
-                <h2 class="h1">Kleding</h2>
+                <h2 class="h1">{{text()['title']['clothing-text']}}</h2>
                 <p class="h5 font-weight-light">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quibusdam iste modi expedita non nihil reiciendis, assumenda saepe. Facere harum aut dignissimos, adipisci, quaerat illum voluptatum deleniti assumenda beatae sint esse iure velit pariatur. Consequuntur debitis laborum corporis architecto sunt officia nihil voluptatem, autem veritatis. Libero facere velit dicta voluptatem illum sint exercitationem consequuntur repudiandae explicabo est! Velit quis blanditiis optio est. Nostrum doloribus dolore recusandae a dolorum impedit ut adipisci provident. Nihil quod natus fuga praesentium quaerat sapiente in!
+                    {{text()['text']['clothing-text']}}
                 </p>
             </div>
             <div class="col-md-6 col-12 mt-2">
@@ -30,11 +30,11 @@
     </div>
     <div class="container-fluid py-md-5 py-3 my-4 bg-primary">
         <div class="text-center">
-            <h2 class="h1">Bestuur</h2>
+            <h2 class="h1">{{text()['title']['management-text']}}</h2>
             <hr>
             <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[0]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2 mb-3" width="685px" height="527px">
             <div class="container w-50">
-                niet al te breed
+                {{text()['text']['management-text']}}
             </div>
             <a href="" class="btn btn-light mt-3">Contact</a>
         </div>
@@ -42,9 +42,9 @@
     <div class="container py-md-5 py-3 my-4">
         <div class="row justify-content-center">
             <div class="col-md-5 col-12 align-self-center">
-                <h2 class="h1">Vaandel</h2>
+                <h2 class="h1">{{text()['title']['flag-text']}}</h2>
                 <p class="h5 font-weight-light">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam officia, magni ducimus quae iste, quod accusantium omnis sapiente possimus placeat, unde modi dicta beatae aspernatur? Tempore tenetur facere cumque facilis culpa, a iusto amet error suscipit ex vel explicabo eaque totam perspiciatis ducimus veritatis nihil animi possimus fugit cum? Dolor maxime tempore possimus aut ex rerum aliquid obcaecati commodi distinctio.
+                    {{text()['text']['flag-text']}}
                 </p>
             </div>
             <div class="col-md-6 col-12">
@@ -54,9 +54,9 @@
                 <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[4]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" width="685px" height="527px">
             </div>
             <div class="col-md-5 col-12 mt-2 align-self-center">
-                <h2 class="h1">Heeft u vragen?</h2>
+                <h2 class="h1">{{text()['title']['any-questions-text']}}</h2>
                 <p class="h5 font-weight-light">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quibusdam iste modi expedita non nihil reiciendis, assumenda saepe. Facere harum aut dignissimos, adipisci, quaerat illum voluptatum deleniti assumenda beatae sint esse iure velit pariatur. Consequuntur debitis laborum corporis architecto sunt officia nihil voluptatem, autem veritatis. Libero facere velit dicta voluptatem illum sint exercitationem consequuntur repudiandae explicabo est! Velit quis blanditiis optio est. Nostrum doloribus dolore recusandae a dolorum impedit ut adipisci provident. Nihil quod natus fuga praesentium quaerat sapiente in!
+                    {{text()['text']['any-questions-text']}}
                 </p>
                 <a href="" class="btn btn-primary my-1">Contact opnemen</a>
             </div>

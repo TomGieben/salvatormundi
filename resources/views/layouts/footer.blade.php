@@ -1,13 +1,13 @@
 <footer class="bg-dark text-center text-white float-bottom">
     <div class="container p-4">
         <section class="mb-4">
-            <a class="btn btn-outline-light btn-floating m-1" href="" role="button"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="" role="button"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="" role="button"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="{{text()['text']['footer-fb-link']}}" role="button"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="{{text()['text']['footer-twtr-link']}}" role="button"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="{{text()['text']['footer-ig-link']}}" role="button"><i class="fab fa-linkedin-in"></i></a>
         </section>
         <section class="mb-4">
             <p>
-                Geen text
+                {{text()['text']['footer-text']}}
             </p>
         </section>
     </div>
