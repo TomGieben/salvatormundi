@@ -9,7 +9,7 @@
     <div class="container my-3">
         <div class="row justify-content-center">
             <div class="col-md-6 col-12">
-                <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[1]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" alt="Wandel met ons" width="400px">
+                <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[1]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" width="685px" height="527px">
             </div>
             <div class="col-md-5 col-12 align-self-center">
                 <h2 class="h1">Historie</h2>
@@ -24,7 +24,7 @@
                 </p>
             </div>
             <div class="col-md-6 col-12 mt-2">
-                <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[2]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" alt="Wandel met ons" width="400px">
+                <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[2]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" width="685px" height="527px">
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="text-center">
             <h2 class="h1">Bestuur</h2>
             <hr>
-            <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[0]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2 mb-3" alt="Wandel met ons" width="400px">
+            <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[0]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2 mb-3" width="685px" height="527px">
             <div class="container w-50">
                 niet al te breed
             </div>
@@ -48,10 +48,10 @@
                 </p>
             </div>
             <div class="col-md-6 col-12">
-                <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[1]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" alt="Wandel met ons" width="400px">
+                <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[3]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" width="685px" height="527px">
             </div>
             <div class="col-md-6 col-12 mt-2">
-                <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[2]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" alt="Wandel met ons" width="400px">
+                <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[4]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" width="685px" height="527px">
             </div>
             <div class="col-md-5 col-12 mt-2 align-self-center">
                 <h2 class="h1">Heeft u vragen?</h2>
