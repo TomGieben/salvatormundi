@@ -7,7 +7,8 @@ use App\Models\Text;
     $items = [];
 
     foreach($text as $item) {
-        $items[$item->slug] = $item->text;
+        $items['text'][$item->slug] = $item->text;
+        $items['title'][$item->slug] = $item->name;
     }
 
     return $items;
