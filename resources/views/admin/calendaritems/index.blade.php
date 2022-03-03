@@ -22,7 +22,7 @@
             @foreach ($items as $item)
                 <li class="list-group-item">
                     Titel: <b>{{$item->title}}</b> |
-                    Datum/Tijd: <b>{{$item->start_at}}</b> |
+                    Datum/Tijd: <b>{{ date('d-m-Y H:i', strtotime($item->start_at)) }}</b> |
                     @if($item->newsarticle)
                         Gekoppeld: <a href="" class="text-dark"><b>{{$item->newsarticle->title}}</b></a> |
                     @endif
@@ -43,7 +43,7 @@
                         @csrf
 
                         <input name="title" type="text" class="form-control my-1" id="title" placeholder="Titel" value="{{$item->title}}" required> 
-                        <input name="startdate" type="datetime-local" class="form-control my-1" id="start-date" value="{{$item->start_at}}" required> 
+                        <input name="startdate" type="datetime-local" class="form-control my-1" id="start-date" value="{{ date('Y-m-d\TH:i:s', strtotime($item->start_at)) }}" required> 
                         <textarea name="description" type="text" class="form-control my-1" id="description">{{$item->description}}</textarea> 
                         <select name="newsarticle" id="newsarticle" class="form-control"> 
                             <option disabled selected>-nieuws artikel-</option>

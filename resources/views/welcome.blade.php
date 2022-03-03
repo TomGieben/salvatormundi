@@ -83,7 +83,7 @@
 						</div>
 						<div class="card-body">
 							<p class="font-wieght-light">{{$calenderItem->description}}</p>
-							<i class="fa fa-clock"></i> {{$calenderItem->start_at}}
+							<i class="fa fa-clock"></i> {{ date('d-m-Y H:i', strtotime($calenderItem->start_at)) }}
 						</div>
 					</div>
 				</div>
