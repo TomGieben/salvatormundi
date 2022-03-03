@@ -1,13 +1,14 @@
-<h1>U heeft een mail ontvangen!</h1>
-<p>Hallo Support,</p>
-<p>{{$data['name']}} heeft u een bericht gestuurd.</p>
-<hr>
-<p><b>Het bericht:</b></p>
+<h1>Contact met Salvator Mundi</h1>
+<p>Hallo {{$data['name']}},</p>
+<p>U heeft zojuist contact opgenomen met Salvator Mundi!</p>
+<br>
+<p><b>Uw bericht:</b></p>
 <div style="border: 1px solid black; padding: 1em;">
     <p>{!! $data['message'] !!}</p>
 </div>
-<hr>
-<p>U kunt reageren naar dit email adres:</p>
-<a href="mailto:{{$data['email']}}">{{$data['email']}}</a>
-<hr>
-<sub>Letop! Deze mail is automatisch gegenereerd.<sub/>
+<br>
+<p>ik probeer zo snel mogelijk te reageren.</p>
+<p>Met vriendelijke groet,</p>
+<p>Gilde Salvator Mundi Oeffelt</p>
+<br>
+<sub>Letop! Deze mail is automatisch gegenereerd. En dus niet geschreven door een persoon.</sub>

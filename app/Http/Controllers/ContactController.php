@@ -48,8 +48,7 @@ class ContactController extends Controller
                 'subject' => $request->subject
             ];
     
-            Mail::to('Tinokolk@gmail.com')->send(new AdminMail($data));
-            // Mail::to($this->text()['email'])->send(new AdminMail($data));
+            Mail::to(text()['text']['contact-email'])->send(new AdminMail($data));
             Mail::to($request->email)->send(new ClientMail($data));
     
             return back()->with('success', 'Het bericht is verzonden. We proberen zo snel mogelijk contact op te nemen.');

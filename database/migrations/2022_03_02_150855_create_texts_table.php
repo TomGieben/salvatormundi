@@ -35,6 +35,7 @@ class CreateTextsTable extends Migration
             'footer facebook link' => 'footer-fb-link',
             'footer twitter link' => 'footer-twtr-link',
             'footer' => 'footer-text',
+            'Contact Email' => 'contact-email',
         ];
 
         foreach($items as $name=>$slug) {
