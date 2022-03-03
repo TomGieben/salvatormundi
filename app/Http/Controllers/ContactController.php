@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\CalendarItems;
 use App\Models\NewsArticles;
-use app\Mail\ClientMail;
-use app\Mail\AdminMail;
+use App\Mail\ClientMail;
+use App\Mail\AdminMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 

@@ -8,15 +8,6 @@
     </div>
     <div class="container my-3">
         <div class="row justify-content-center">
-            <div class="col-md-6 col-12">
-                <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[1]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" width="685px" height="527px">
-            </div>
-            <div class="col-md-5 col-12 align-self-center">
-                <h2 class="h1">{{text()['title']['history-text']}}</h2>
-                <p class="h5 font-weight-light">
-                    {{text()['text']['history-text']}}
-                </p>
-            </div>
             <div class="col-md-5 col-12 mt-2 align-self-center">
                 <h2 class="h1">{{text()['title']['clothing-text']}}</h2>
                 <p class="h5 font-weight-light">
@@ -25,6 +16,12 @@
             </div>
             <div class="col-md-6 col-12 mt-2">
                 <img loading="lazy" src="{{url('/storage/img/photogallery/'.$images[2]['image'].'')}}" class="img-fluid rounded shadow-lg mt-2" width="685px" height="527px">
+            </div>
+            <div class="col-12 align-self-center">
+                <h2 class="h1 text-center">{{text()['title']['history-text']}}</h2>
+                <p class="h5 font-weight-light p-4">
+                    {{text()['text']['history-text']}}
+                </p>
             </div>
         </div>
     </div>
