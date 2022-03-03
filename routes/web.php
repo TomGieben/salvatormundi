@@ -27,6 +27,9 @@ Route::get('/over-ons', [App\Http\Controllers\AboutusController::class, 'index']
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
 
+    Route::get('/admin/teksten', [App\Http\Controllers\Admin\TextController::class, 'index'])->name('admin.text.index');
+    Route::post('/admin/teksten/aanpassen/{text}', [App\Http\Controllers\Admin\TextController::class, 'edit'])->name('admin.text.edit');
+
     Route::get('/admin/fotos', [App\Http\Controllers\Admin\PhotoGalleryItemsController::class, 'index'])->name('admin.photogallery.index');
     Route::get('/admin/fotos/create', [App\Http\Controllers\Admin\PhotoGalleryItemsController::class, 'create'])->name('admin.photogallery.create');
     Route::post('/admin/fotos/store', [App\Http\Controllers\Admin\PhotoGalleryItemsController::class, 'store'])->name('admin.photogallery.store');

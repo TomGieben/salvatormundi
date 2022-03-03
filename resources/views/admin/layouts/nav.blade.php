@@ -87,7 +87,7 @@
     </div>
     <ul class="nav" id="nav">
       <li><a href="{{route('admin.index')}}">Dashboard</a></li>
-      <li><a href="#">Teksten</a></li>
+      <li><a href="{{route('admin.text.index')}}">Teksten</a></li>
       <li><a href="{{route('admin.newsletters.index')}}">Nieuwsbrieven</a></li>
       <li><a href="{{route('admin.photogallery.index')}}">Fotogalerij</a></li>
       @if(auth()->user()->admin == 1)
