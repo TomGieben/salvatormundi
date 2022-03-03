@@ -13,7 +13,7 @@
                         Bewerken
                     </a>
                 @else
-                    <p class="m-1">Geschreven door: {{$newsarticle->writer}}</p>
+                    <p class="m-1">Geschreven door: {{$newsarticle->writer}} | {{$newsarticle->created_at}}</p>
                 @endif
             </div>
         </div>
