@@ -17,7 +17,7 @@ class NewsArticlesController extends Controller
 
     public function show($newsarticle) {
         $newsarticle = NewsArticles::where('slug', $newsarticle)->first();
-        $realatedArticles = NewsArticles::where('id', '!=', $newsarticle->id)->take(4)->get();
+        $realatedArticles = NewsArticles::where('id', '!=', $newsarticle->id)->take(3)->get();
 
         return view('newsarticles.show',[
             'newsarticle'=> $newsarticle,

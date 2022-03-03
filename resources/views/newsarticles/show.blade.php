@@ -46,7 +46,7 @@
             @endforeach
         </div>
     </div>
-    <div class="my-4">
+    <div class="my-4" style="font-size: 2.5vh;">
         {!! $newsarticle->description !!}
     </div>   
     @if($realatedArticles)

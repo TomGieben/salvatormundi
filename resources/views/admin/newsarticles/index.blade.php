@@ -38,7 +38,13 @@
                             <div class="card-title col">
                                 <h2>{{$newsarticle->title}}</h2>
                             </div>
-                            @if($newsarticle->pin)<div class="col-auto mt-1"><h4><i class="fa fa-thumb-tack"></i></h4></div> @endif
+                            @if($newsarticle->pin)
+                                <div class="col-auto mt-1">
+                                    <h4>
+                                        <i class="fa fa-thumb-tack"></i>
+                                    </h4>
+                                </div> 
+                            @endif
                         </div>
                     </div>
                     <div class="card-body p-2">
@@ -53,15 +59,17 @@
                             </div>
                             <div class="col-auto">
                                 <div class="btn-group">
-                                    <a href="" class="btn btn-success">
+                                    <a href="{{route('newsarticles.show', $newsarticle->slug)}}" class="btn btn-success">
                                         <i class="fa fa-eye"></i>
                                     </a>
                                     <a href="{{route('admin.newsarticles.edit', $newsarticle->slug)}}" class="btn btn-warning">
                                         <i class="fa fa-pencil"></i>
                                     </a>
-                                    <a href="{{route('admin.newsarticles.delete', $newsarticle->slug)}}" class="btn btn-danger">
-                                        <i class="fa fa-trash"></i>
-                                    </a>
+                                    @if(auth()->user()->admin == 1)
+                                        <a href="{{route('admin.newsarticles.delete', $newsarticle->slug)}}" class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="container">
+    <div class="container my-5">
         <div class="title my-4">
             <h1 class="text-center">Over ons</h1>
             <hr>

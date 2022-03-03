@@ -40,9 +40,11 @@
                                     <a href="{{route('newsletters.index')}}?slug={{$newsletter->slug}}" class="btn btn-success">
                                         <i class="fa fa-eye"></i>
                                     </a>
-                                    <a href="{{route('admin.newsletter.delete', $newsletter->slug)}}" class="btn btn-danger">
-                                        <i class="fa fa-trash"></i>
-                                    </a>
+                                    @if(auth()->user()->admin == 1)
+                                        <a href="{{route('admin.newsletter.delete', $newsletter->slug)}}" class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                         </div>

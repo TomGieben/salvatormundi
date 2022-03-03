@@ -12,6 +12,8 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name(
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'sendmail'])->name('contact.sendmail');
 
+Route::get('/fotos', [App\Http\Controllers\PhotoGalleryController::class, 'index'])->name('photogallery.index');
+
 Route::get('/calender', [App\Http\Controllers\CalenderItemsController::class, 'index'])->name('calendaritems.index');
 
 Route::get('/nieuws', [App\Http\Controllers\NewsArticlesController::class, 'index'])->name('newsarticles.index');

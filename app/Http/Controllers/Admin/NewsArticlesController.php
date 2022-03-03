@@ -51,7 +51,6 @@ class NewsArticlesController extends Controller
             return redirect()->back()->with('error', 'Je hebt geen tekst ingevuld.');
         }
 
-       
         if($request->images) {
             foreach($request->file('images') as $key => $image) {
                 $count = $key + 1;
@@ -71,7 +70,10 @@ class NewsArticlesController extends Controller
             }
 
             $attributes['images'] = json_encode($imagepaths);
+        } elseif($newsarticle->images == null) {
+            return redirect()->back()->with('error', 'Je moet een afbeelding toevoegen.');
         }
+
         if($request->pin == "on"){
             if($newsarticle->pin){
                 $pin = 1;

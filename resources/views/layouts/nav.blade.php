@@ -91,7 +91,7 @@
       <li><a href="{{route('calendaritems.index')}}">Activiteiten</a></li>
       <li><a href="{{route('newsarticles.index')}}">Nieuws</a></li>
       <li><a href="{{route('newsletters.index')}}">Nieuwsbrieven</a></li>
-      <li><a href="#">Fotogalerij</a></li>
+      <li><a href="{{route('photogallery.index')}}">Fotogalerij</a></li>
       <li><a href="{{route('contact.index')}}">Contact</a></li>
     </ul>
 </div>

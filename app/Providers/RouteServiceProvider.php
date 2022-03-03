@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Visits;
+use Carbon\Carbon;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -35,6 +37,22 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $clientIP = request()->ip(); 
+        $currentPage = url()->current();
+        $item = Visits::where('ip_address', $clientIP)->where('page', $currentPage)->first();
+        if($item)
+        {
+            Visits::where('ip_address', $clientIP)->where('page', $currentPage)->update([
+                'ip_address' => $clientIP,
+                'page' => $currentPage,
+            ]);
+        } else {
+            Visits::create([
+                'ip_address' => $clientIP,
+                'page' => $currentPage,
+            ]);
+        }
+
         $this->configureRateLimiting();
 
         $this->routes(function () {

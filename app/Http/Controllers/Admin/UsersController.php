@@ -11,10 +11,15 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
     public function index() {
-        $users = User::all();
-        return view('admin.users.index', [
-            'users' => $users,
-        ]);
+        if(auth()->user()->admin == 1) {
+            $users = User::all();
+            return view('admin.users.index', [
+                'users' => $users,
+            ]);
+        } else {
+            return redirect()->back();
+        }
+
     }
 
     public function store(Request $request) {

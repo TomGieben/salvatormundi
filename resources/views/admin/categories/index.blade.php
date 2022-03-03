@@ -1,8 +1,15 @@
 @extends('admin.layouts.layout')
 @section('content')
 <div class="container text-dark mt-5">
-    <div>
-        <h1 class="my-4">Categorieën</h1>
+    <div class="row justify-content-between">
+        <div class="col-auto">
+            <h1 class="my-4">Categorieën</h1>
+        </div>
+        <div class="col-auto">
+            <a href="{{route('admin.photogallery.index')}}" class="btn btn-light my-4">
+                <i class="fa fa-arrow-left"></i> Terug
+            </a>
+        </div>
     </div>
 
     @if ($message = Session::get('error'))

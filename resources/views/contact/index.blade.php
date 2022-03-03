@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="container">
+    <div class="container my-5">
         <h1 class="text-center">Contact</h1>
         <hr>
     </div>
@@ -70,8 +70,8 @@
             <div class="col-md-5 col-12 align-self-center my-4">
                 <h2 class="h1">{{$newsarticle->title}}</h2>
                 <p class="h5 font-weight-light">
-                    @if(strlen($newsarticle->description) > 500)
-                        {!! substr($newsarticle->description,0,strpos($newsarticle->description, ' ',800)) !!}
+                    @if(strlen($newsarticle->description) > 700)
+                        {!! substr($newsarticle->description,0,strpos($newsarticle->description, ' ',700)) !!}
                     @else
                         {!! $newsarticle->description !!}
                     @endif
