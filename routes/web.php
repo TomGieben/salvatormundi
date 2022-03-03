@@ -25,7 +25,7 @@ Route::get('/nieuwsbrieven/download/{file}', [App\Http\Controllers\NewsLettersCo
 Route::get('/over-ons', [App\Http\Controllers\AboutusController::class, 'index'])->name('aboutus.index');
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.index');
 
     Route::get('/admin/teksten', [App\Http\Controllers\Admin\TextController::class, 'index'])->name('admin.text.index');
     Route::post('/admin/teksten/aanpassen/{text}', [App\Http\Controllers\Admin\TextController::class, 'edit'])->name('admin.text.edit');
